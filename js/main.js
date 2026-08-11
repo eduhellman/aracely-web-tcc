@@ -30,6 +30,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   function pintar(){
     const f=FASES[i];
     fase.textContent=f.nombre;
+    timer.classList.remove('oculto');
     timer.textContent=resta+' s';
     orb.classList.remove('inhala','sosten','exhala');
     // Forzar reflow para reiniciar la animación del anillo en cada inhalación
@@ -52,8 +53,8 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     activo=false;clearInterval(tick);
     btn.textContent='Iniciar ciclo';
     orb.classList.remove('inhala','sosten','exhala');
-    fase.textContent='Preparada/o';
-    timer.innerHTML='&nbsp;';
+    fase.textContent='Listo/a';
+    timer.classList.add('oculto');
     Object.values(barras).forEach(b=>b.classList.remove('on'));
   }
   btn.addEventListener('click',()=>activo?detener():iniciar());
