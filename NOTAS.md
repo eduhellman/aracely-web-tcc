@@ -182,12 +182,28 @@ aparece el bloque de Cloudflare y que los 5 bots de IA quedan con `Allow: /`.
 ### Pasos post-publicación pendientes (con el mismo NAP en todos lados)
 Nombre: **Lic. Aracely Arce Blaires — Psicóloga Clínica** · Dirección: **Arroyo Lambaré casi
 Taguató 434, Asunción, Paraguay** · Teléfono: **+595 982 135 943**
-1. Google Business Profile (categoría "Psicólogo/a", modalidad online+presencial)
-2. Bing Places (se puede importar desde Google Business Profile)
-3. Google Search Console (verificar propiedad, enviar sitemap.xml, revisar detección del schema
-   con Rich Results Test una vez el dominio esté en línea)
+
+**Importante**: estos tres primeros pasos deben hacerse con la cuenta de Google/Microsoft de
+**Aracely**, no con la del desarrollador, para que ella mantenga el control del listado a futuro.
+
+1. **Google Search Console** (search.google.com/search-console)
+   - Agregar propiedad de tipo "Dominio" con `aracelyarceblaires.com.py`
+   - Verificar vía el registro TXT que da Google (agregarlo en el DNS del dominio, Cloudflare →
+     DNS — se confirmó el 2026-08-12 que el sitio no tiene ningún TXT record todavía)
+   - Una vez verificado: Sitemaps → enviar `https://aracelyarceblaires.com.py/sitemap.xml`
+   - Revisar que detecte el schema `FAQPage`/`Psychologist` (Rich Results Test)
+2. **Google Business Profile** (business.google.com)
+   - Crear perfil "Lic. Aracely Arce Blaires — Psicóloga Clínica", categoría "Psicólogo/a"
+   - Mismo NAP que el sitio; marcar que ofrece servicio online además de la ubicación física
+   - Vincular el sitio web
+3. **Bing Places** (bingplaces.com) — se puede importar directo desde el Google Business Profile
+   una vez creado
 4. Confirmar que Instagram y Facebook tengan el mismo NAP en su bio/info
 5. Directorios locales de Paraguay (páginas amarillas, gremios de psicología)
+
+Verificado el 2026-08-12: el sitio todavía no aparece indexado en Google (`site:aracelyarceblaires.com.py`
+sin resultados) y no hay Google Business Profile ni Bing Places creados — confirma que estos 5
+pasos siguen 100% pendientes.
 
 ## Publicación
 Sitio 100% estático → Cloudflare Pages / Netlify / GitHub Pages gratis + dominio .com.py vía NIC-PY.
