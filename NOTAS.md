@@ -133,6 +133,28 @@ cerrados desde la Fase 1+2):
   shift. El del footer además lleva `loading="lazy"` (está fuera del viewport inicial); el del
   nav se deja sin lazy porque es visible de entrada.
 
+### Post-publicación: Cloudflare bloqueaba a los bots de IA por defecto
+Una vez publicado en Cloudflare Pages, `https://aracelyarceblaires.com.py/robots.txt` mostraba un
+bloque `# BEGIN Cloudflare Managed content` **antes** de nuestro `robots.txt`, con
+`Disallow: /` para `ClaudeBot`, `GPTBot`, `Google-Extended`, `Applebot-Extended`, `Amazonbot`,
+`Bytespider`, `CCBot` y `meta-externalagent` — justo lo contrario de lo que buscábamos en el
+punto 19 de la auditoría (que los asistentes de IA puedan citar el sitio).
+
+Causa: el dashboard de Cloudflare tiene una función **AI Crawl Control → Señales → "robots.txt
+gestionado"**, activada por defecto, que reescribe el `robots.txt` del sitio para declarar que el
+contenido no debe usarse para entrenar IA. Los toggles de bloqueo por bot en **AI Crawl Control →
+Seguridad** (que sí se habían desactivado correctamente) no controlan esto — son cosas separadas
+(bloqueo de tráfico real vs. declaración en robots.txt).
+
+Nota de proceso: al revisar esto se detectó que el cambio se había probado primero en la cuenta de
+Cloudflare equivocada (`eduhellman@gmail.com`, sin dominios ni proyectos) en vez de la cuenta real
+del sitio (`aracelyarceblaires95@gmail.com`), lo que explicaba por qué el primer intento de
+desbloqueo no se reflejaba en el archivo en vivo.
+
+**Solución**: desactivar el toggle "robots.txt gestionado" en Señales, para que Cloudflare deje de
+sobrescribir el archivo y sirva tal cual el `robots.txt` del repo. Confirmado con `curl` que ya no
+aparece el bloque de Cloudflare y que los 5 bots de IA quedan con `Allow: /`.
+
 ### Pendiente que sigue sin resolver de auditoria.md
 - Punto 8: LinkedIn en el footer sigue con `href="#"` — sin URL real todavía.
 - Punto 14: CTA inconsistente entre nav/hero ("Quiero conocer el espacio") y CTA final ("Quiero
