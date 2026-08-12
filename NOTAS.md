@@ -113,6 +113,50 @@ Actualizado en los 5 lugares donde vive esta lista: tarjetas de "¿Cómo puedo a
 `index.html`, la respuesta de FAQ correspondiente (visible + JSON-LD embebido), `schema.json`
 (`knowsAbout`/`makesOffer` + `FAQPage`), `faq.md` y `estructura-home.md`.
 
+## Sesión de SEO técnico (Fase 3 — pendientes 🟡/🟢 de auditoria.md)
+
+Resueltos los puntos 9, 10, 11 y parte del 12 de `auditoria.md` (los críticos 1-6 ya estaban
+cerrados desde la Fase 1+2):
+
+- **Canonical + Open Graph + Twitter Card** (`index.html`, `<head>`): se agregó
+  `<link rel="canonical">` apuntando a `https://aracelyarceblaires.com.py/` y las etiquetas
+  `og:*`/`twitter:*` reutilizando `assets/logo-transparente.png` como imagen (mismo asset que ya
+  usa `schema.json`). Antes, compartir el link por WhatsApp/Instagram no mostraba preview.
+- **Favicon**: se enlazó `assets/logo-icono.png` con `<link rel="icon">` (el archivo ya existía,
+  solo faltaba declararlo).
+- **`robots.txt`** (nuevo, raíz del proyecto): permite rastreo general y agrega reglas explícitas
+  de `Allow` para `GPTBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot` y `Google-Extended`
+  (punto 19 de la auditoría — no bloquear bots de IA por defecto), más referencia al sitemap.
+- **`sitemap.xml`** (nuevo, raíz del proyecto): una sola URL (home), `priority 1.0`.
+- **Atributos de imagen**: los dos `<img>` del sitio (logo del nav y logo del footer, ambos
+  `assets/logo-transparente.png`, 1182×194) ahora declaran `width`/`height` para evitar layout
+  shift. El del footer además lleva `loading="lazy"` (está fuera del viewport inicial); el del
+  nav se deja sin lazy porque es visible de entrada.
+
+### Pendiente que sigue sin resolver de auditoria.md
+- Punto 8: LinkedIn en el footer sigue con `href="#"` — sin URL real todavía.
+- Punto 14: CTA inconsistente entre nav/hero ("Quiero conocer el espacio") y CTA final ("Quiero
+  agendar por WhatsApp") — bajo impacto, no se tocó todavía.
+- Punto 15: sin fecha de "última actualización" visible — opcional para una landing de una sola
+  página.
+- Punto 17: estadísticas/citas del brief profesional en el copy — es trabajo de contenido, no
+  técnico.
+- Punto 18: fotos reales de Aracely y del consultorio.
+- Punto 20: HTTPS/Core Web Vitals reales solo se pueden verificar una vez el sitio esté publicado
+  en `aracelyarceblaires.com.py`.
+
+### Punto 12 (resto) y punto 16 — resueltos en esta misma sesión
+- **WebP**: se instaló `webp` (+ dependencia `libtiff`) vía Homebrew y se generó
+  `assets/logo-transparente.webp` (26 KB vs. 139 KB del PNG original, -81%) con
+  `cwebp -q 90`. Los dos `<img>` que usan ese logo (nav y footer) ahora están envueltos en
+  `<picture>` con `<source type="image/webp">` y el PNG como fallback — el resto de los
+  `assets/*.jpg`/`.png` no está referenciado en `index.html`/`css/style.css`, así que no
+  necesitaba conversión. `og:image`, `twitter:image` y `schema.json` se dejaron en PNG a
+  propósito (compatibilidad de crawlers de redes sociales con WebP es inconsistente).
+- **`llms.txt`** (nuevo, raíz del proyecto): resumen del sitio (quién es Aracely, ubicación,
+  modalidad, contacto, áreas de atención) para que ChatGPT/Perplexity/Claude lo entiendan sin
+  tener que rastrear todo el HTML.
+
 ### Pasos post-publicación pendientes (con el mismo NAP en todos lados)
 Nombre: **Lic. Aracely Arce Blaires — Psicóloga Clínica** · Dirección: **Arroyo Lambaré casi
 Taguató 434, Asunción, Paraguay** · Teléfono: **+595 982 135 943**
