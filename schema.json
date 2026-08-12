@@ -1,0 +1,186 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Psychologist",
+      "@id": "https://aracelyarceblaires.com.py/#negocio",
+      "name": "Lic. Aracely Arce Blaires — Psicóloga Clínica",
+      "alternateName": "Aracely Arce Blaires",
+      "description": "Psicoterapia online y presencial en Asunción, Paraguay. Enfoque Cognitivo-Conductual basado en evidencia. Lic. Aracely Arce Blaires, Psicóloga Clínica, matrícula N.° 13799.",
+      "url": "https://aracelyarceblaires.com.py",
+      "image": "https://aracelyarceblaires.com.py/assets/logo-transparente.png",
+      "logo": "https://aracelyarceblaires.com.py/assets/logo-transparente.png",
+      "telephone": "+595982135943",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Matrícula Profesional",
+        "value": "13799"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Arroyo Lambaré casi Taguató 434",
+        "addressLocality": "Asunción",
+        "addressCountry": "PY"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Asunción"
+        },
+        {
+          "@type": "Country",
+          "name": "Paraguay"
+        }
+      ],
+      "availableLanguage": {
+        "@type": "Language",
+        "name": "Español"
+      },
+      "knowsAbout": [
+        "Terapia Cognitivo-Conductual",
+        "Ansiedad y dificultades emocionales",
+        "Depresión y estados de ánimo bajo",
+        "Estrés y regulación emocional",
+        "Autoestima y relaciones interpersonales",
+        "Fobias y dificultades sociales",
+        "Adaptación a cambios y situaciones vitales",
+        "Adolescentes",
+        "Orientación a padres",
+        "Estimulación y rehabilitación cognitiva en adultos mayores"
+      ],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Psicoterapia para ansiedad y dificultades emocionales" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Psicoterapia para depresión y estados de ánimo bajo" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Psicoterapia para estrés y regulación emocional" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Psicoterapia para autoestima y relaciones interpersonales" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Psicoterapia para fobias y dificultades sociales" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acompañamiento en adaptación a cambios y situaciones vitales" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Psicoterapia para adolescentes" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Orientación a padres" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estimulación y rehabilitación cognitiva en adultos mayores" } }
+      ],
+      "sameAs": [
+        "https://instagram.com/psico.aracelyarce",
+        "https://www.facebook.com/profile.php?id=61592144711436"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://aracelyarceblaires.com.py/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Quién es Aracely Arce Blaires?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aracely Arce Blaires es Licenciada en Psicología, psicóloga clínica matriculada (N.° 13799) en Paraguay, y miembro del Departamento de Psicología del Hospital de Clínicas de la Facultad de Ciencias Médicas (UNA). Ejerce en Asunción, Paraguay, con un enfoque de Terapia Cognitivo-Conductual basado en evidencia científica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es la Terapia Cognitivo-Conductual (TCC)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es un enfoque terapéutico basado en evidencia científica que trabaja la relación entre pensamientos, emociones y comportamientos. Es práctico y colaborativo: además de comprender qué te pasa, aprendes herramientas concretas para aplicar en tu vida cotidiana. Es el enfoque principal de Aracely Arce Blaires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa que la psicoterapia esté \"basada en evidencia\"?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Significa que las intervenciones utilizadas están respaldadas por estudios científicos e investigación clínica que han demostrado su eficacia. Aracely Arce Blaires integra este enfoque con el modelo de Terapia Cognitivo-Conductual (TCC) en su práctica clínica en Asunción, Paraguay, adaptando las estrategias a las necesidades y objetivos de cada persona."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué áreas o problemáticas atiende Aracely Arce Blaires?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ansiedad y dificultades emocionales; depresión y estados de ánimo bajo; estrés y regulación emocional; autoestima y relaciones interpersonales; fobias y dificultades sociales; adaptación a cambios y situaciones vitales; adolescentes; orientación a padres; y estimulación y rehabilitación cognitiva en adultos mayores. La atención no se limita a estas áreas. Cada proceso terapéutico se adapta a las necesidades, dificultades y objetivos particulares de la persona. Trabaja en Asunción, Paraguay, tanto de forma presencial como online."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Aracely Arce Blaires atiende adolescentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Ofrece acompañamiento clínico a adolescentes en una etapa clave del desarrollo, trabajando también con el entorno familiar cuando es necesario."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde queda el consultorio de la Lic. Aracely Arce Blaires?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El consultorio está en Arroyo Lambaré casi Taguató 434, Asunción, Paraguay. Aracely Arce Blaires atiende ahí sesiones presenciales, y también ofrece sesiones online para quienes prefieren conectarse por videollamada desde cualquier lugar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Aracely Arce Blaires atiende online o solo presencial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ofrece ambas modalidades. Las sesiones presenciales son en su consultorio en Asunción (Arroyo Lambaré casi Taguató 434) y las sesiones online se realizan por videollamada, para pacientes en otras ciudades de Paraguay o en el exterior."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito saber qué me pasa antes de empezar terapia con Aracely Arce Blaires?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Parte del trabajo terapéutico es justamente ponerle nombre a lo que te ocurre. Puedes llegar con una sensación difusa, una situación puntual, o simplemente con la intuición de que algo podría estar mejor — no hace falta un diagnóstico previo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La terapia consiste solamente en hablar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hablar es parte importante del proceso, pero no lo único. En la Terapia Cognitivo-Conductual que utiliza Aracely Arce Blaires también se identifican patrones, se cuestionan interpretaciones, se practican estrategias y se prueban cambios concretos entre sesiones — es un trabajo activo, hecho en equipo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto dura un proceso terapéutico con enfoque Cognitivo-Conductual?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de cada persona, del motivo de consulta y de los objetivos definidos en conjunto. La TCC suele orientarse a objetivos concretos, y la duración se evalúa de forma transparente durante el proceso junto con Aracely Arce Blaires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo sé si este espacio es para mí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La mejor manera de saberlo es conversando directamente con Aracely Arce Blaires. Podés escribirle, contarle brevemente qué estás buscando y resolver tus dudas antes de decidir — no hay ningún compromiso en preguntar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la matrícula profesional de Aracely Arce Blaires?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Su matrícula profesional como psicóloga clínica en Paraguay es el N.° 13799."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Aracely Arce Blaires trabaja con alguna institución además de su consultorio particular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, es psicóloga clínica y miembro del Departamento de Psicología en la Facultad de Ciencias Médicas de la Universidad Nacional de Asunción (Hospital de Clínicas), además de su práctica clínica privada en Asunción, Paraguay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se agenda una consulta con Aracely Arce Blaires?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La forma más directa es escribir por WhatsApp al +595 982 135 943, o por Instagram (@psico.aracelyarce). Aracely responde personalmente para coordinar horario y modalidad (presencial en Asunción u online)."
+          }
+        }
+      ]
+    }
+  ]
+}
