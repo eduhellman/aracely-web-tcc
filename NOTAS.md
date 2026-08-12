@@ -186,24 +186,29 @@ Taguató 434, Asunción, Paraguay** · Teléfono: **+595 982 135 943**
 **Importante**: estos tres primeros pasos deben hacerse con la cuenta de Google/Microsoft de
 **Aracely**, no con la del desarrollador, para que ella mantenga el control del listado a futuro.
 
-1. **Google Search Console** (search.google.com/search-console)
-   - Agregar propiedad de tipo "Dominio" con `aracelyarceblaires.com.py`
-   - Verificar vía el registro TXT que da Google (agregarlo en el DNS del dominio, Cloudflare →
-     DNS — se confirmó el 2026-08-12 que el sitio no tiene ningún TXT record todavía)
-   - Una vez verificado: Sitemaps → enviar `https://aracelyarceblaires.com.py/sitemap.xml`
-   - Revisar que detecte el schema `FAQPage`/`Psychologist` (Rich Results Test)
-2. **Google Business Profile** (business.google.com)
-   - Crear perfil "Lic. Aracely Arce Blaires — Psicóloga Clínica", categoría "Psicólogo/a"
-   - Mismo NAP que el sitio; marcar que ofrece servicio online además de la ubicación física
-   - Vincular el sitio web
-3. **Bing Places** (bingplaces.com) — se puede importar directo desde el Google Business Profile
-   una vez creado
-4. Confirmar que Instagram y Facebook tengan el mismo NAP en su bio/info
-5. Directorios locales de Paraguay (páginas amarillas, gremios de psicología)
+1. ✅ **Google Search Console** (search.google.com/search-console) — hecho el 2026-08-12
+   - Propiedad tipo "Dominio" `aracelyarceblaires.com.py` verificada vía TXT en Cloudflare DNS
+   - Sitemap `https://aracelyarceblaires.com.py/sitemap.xml` enviado
+   - Indexación de la home (`https://aracelyarceblaires.com.py/`) solicitada manualmente
+   - Pendiente: revisar en unos días que el sitemap pase a "Se rastreó" y correr el Rich
+     Results Test para confirmar que Google lee bien el schema `FAQPage`/`Psychologist`
+2. ✅ **Google Business Profile** (business.google.com) — creado y verificado el 2026-08-12
+   - Perfil "Lic. Aracely Arce Blaires — Psicóloga Clínica", categoría "Psicólogo"
+   - Mismo NAP que el sitio; presencial + online; sitio web vinculado
+3. ✅ **Bing Places** (bingplaces.com) — importado desde Google Business Profile el 2026-08-12
+4. ✅ Instagram y Facebook (Página de negocio) con el mismo NAP — confirmado el 2026-08-12
+5. Directorios locales de Paraguay — pendiente, abierto/acumulativo (sin fecha límite). Candidatos:
+   - Páginas Amarillas Paraguay (paginasamarillas.com.py) — categoría Psicólogos/Salud mental
+   - Colegio de Psicólogos del Paraguay — confirmar que el directorio de matriculados (N.° 13799)
+     tenga el sitio web actualizado
+   - Doctoralia (doctoralia.com.py) — alta gratuita para profesionales de salud
+   Usar siempre el mismo NAP: Lic. Aracely Arce Blaires — Psicóloga Clínica · Arroyo Lambaré casi
+   Taguató 434, Asunción, Paraguay · +595 982 135 943 · https://aracelyarceblaires.com.py
 
-Verificado el 2026-08-12: el sitio todavía no aparece indexado en Google (`site:aracelyarceblaires.com.py`
-sin resultados) y no hay Google Business Profile ni Bing Places creados — confirma que estos 5
-pasos siguen 100% pendientes.
+Verificado el 2026-08-12: el sitio no aparecía indexado en Google (`site:aracelyarceblaires.com.py`
+sin resultados) antes de este paso. Search Console, Google Business Profile, Bing Places y el NAP
+en redes ya están hechos; falta confirmar la indexación efectiva (en curso) y los directorios
+locales de Paraguay (punto 5, sin apuro).
 
 ## Publicación
 Sitio 100% estático → Cloudflare Pages / Netlify / GitHub Pages gratis + dominio .com.py vía NIC-PY.
