@@ -114,7 +114,7 @@
           "name": "¿Dónde queda el consultorio de la Lic. Aracely Arce Blaires?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El consultorio está en Arroyo Lambaré casi Taguató 434, Asunción, Paraguay. Aracely Arce Blaires atiende ahí sesiones presenciales, y también ofrece sesiones online para quienes prefieren conectarse por videollamada desde cualquier lugar."
+            "text": "El consultorio se encuentra sobre Arroyo Lambaré casi Taguató 434, Asunción, Paraguay. Alli ofrece atención presencial y, para quienes prefieren conectarse la modalidad a distancia, también se encuentran disponibles sesiones online por videollamada desde cualquier lugar."
           }
         },
         {
@@ -122,7 +122,7 @@
           "name": "¿Aracely Arce Blaires atiende online o solo presencial?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ofrece ambas modalidades. Las sesiones presenciales son en su consultorio en Asunción (Arroyo Lambaré casi Taguató 434) y las sesiones online se realizan por videollamada, para pacientes en otras ciudades de Paraguay o en el exterior."
+            "text": "Ofrece ambas modalidades. Las sesiones presenciales son en su consultorio en Asunción (Arroyo Lambaré casi Taguató 434) y las sesiones online se realizan por videollamada, para personas en otras ciudades de Paraguay o en el exterior."
           }
         },
         {
@@ -130,7 +130,7 @@
           "name": "¿Necesito saber qué me pasa antes de empezar terapia con Aracely Arce Blaires?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Parte del trabajo terapéutico es justamente ponerle nombre a lo que te ocurre. Puedes llegar con una sensación difusa, una situación puntual, o simplemente con la intuición de que algo podría estar mejor — no hace falta un diagnóstico previo."
+            "text": "No. Parte del trabajo terapéutico es justamente ponerle nombre a lo que te ocurre. Podés llegar con una sensación difusa, una situación puntual, o simplemente con la intuición de que algo podría estar mejor — no hace falta un diagnóstico previo."
           }
         },
         {
