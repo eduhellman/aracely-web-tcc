@@ -210,6 +210,61 @@ sin resultados) antes de este paso. Search Console, Google Business Profile, Bin
 en redes ya están hechos; falta confirmar la indexación efectiva (en curso) y los directorios
 locales de Paraguay (punto 5, sin apuro).
 
+### Post-publicación: `www` sin registro DNS causaba contenido duplicado (bloqueaba indexación)
+
+El 2026-08-19, una semana después de solicitar la indexación, el sitio seguía sin aparecer en
+`site:aracelyarceblaires.com.py` y Search Console marcaba la home como **"Página alternativa con
+etiqueta canónica adecuada"** — es decir, Google no consideraba `https://aracelyarceblaires.com.py/`
+como la versión canónica, pese a que su propia etiqueta `<link rel="canonical">` apunta a sí misma.
+
+**Diagnóstico** (con `curl -I` a las 4 variantes de host): `https://`, `http://`,
+`https://www.` y `http://www.` devolvían las cuatro `200 OK` con contenido idéntico, sin ningún
+redirect entre ellas. El propio panel de "Recomendaciones" de Cloudflare DNS confirmó la causa:
+no existía **ningún registro DNS para `www`** (el dominio se sirve mediante un Worker
+(`aracely-web-tcc`) enganchado únicamente al apex). Sin backlinks externos que reforzaran cuál
+versión es la real (el sitio es nuevo, punto 5 de directorios locales todavía pendiente), Google
+no confiaba en la canonical declarada y agrupaba el clúster de duplicados de otra forma.
+
+**Solución aplicada en Cloudflare** (cuenta `aracelyarceblaires95@gmail.com`):
+1. `DNS → Records`: se agregó un registro `CNAME www → aracelyarceblaires.com.py`, con proxy
+   activado (nube naranja) — antes no existía ningún registro para `www`.
+2. `Rules → Redirect Rules`: se creó la regla "Redirigir de WWW a raíz" a partir de la plantilla
+   de Cloudflare — patrón `https://www.*` → `https://${1}`, código **301**, con "Conservar cadena
+   de consulta" activado.
+3. `SSL/TLS → Edge Certificates`: se confirmó que "Usar siempre HTTPS" ya estaba activo (fuerza
+   `http` → `https` en toda la zona).
+
+**Verificado con `curl -I`** después del cambio: solo `https://aracelyarceblaires.com.py/`
+devuelve `200`; las otras tres variantes devuelven `301` y terminan resolviendo ahí (el caso
+`http://www.` da dos saltos: a `https://www.` y de ahí al apex).
+
+**Resultado**: el mismo día, Search Console (Inspección de URL) mostró **"La URL está en
+Google"** — el sitio ya está indexado. La prueba en vivo confirmó rastreo permitido, obtención de
+página correcta, indexación permitida y canonical declarada correctamente; el campo "canónica
+seleccionada por Google" seguía vacío ("información disponible tras la indexación"), lo cual es
+normal en una prueba en vivo recién hecha y no indica un problema.
+
+Además, en el panel principal de "Indexación de páginas" (no la prueba en vivo) confirmó:
+**"La página está indexada"**, con "Seleccionada por Google como canónica: URL inspeccionada" —
+es decir, Google ya eligió esta misma URL como su canónica, coincidiendo con la declarada. El aviso
+original de "Página alternativa" venía del informe agregado de "Páginas", que se recalcula más
+lento que el estado individual por URL.
+
+### Verificación del schema con el Rich Results Test (2026-08-19)
+
+Se corrió `search.google.com/test/rich-results` sobre `https://aracelyarceblaires.com.py/` para
+confirmar que Google lee bien el JSON-LD de `schema.json`/`index.html`. Resultado: **2 elementos
+válidos detectados** — "Empresas locales" y "Organización" (ambos derivados del mismo objeto
+`MedicalBusiness`), con NAP, matrícula, áreas de atención, `makesOffer` y `sameAs` leyéndose
+correctamente. Único aviso en ambos, no crítico: falta el campo opcional `priceRange` — coincide
+con el punto ya pendiente en este documento (duración de sesión y precio sin definir todavía).
+
+El bloque `FAQPage` no aparece en la prueba, y no es un error del schema: desde 2023 Google
+restringió el rich result de tipo FAQ a sitios gubernamentales y de salud "reconocidos y
+autorizados", por lo que la herramienta ya ni siquiera lo evalúa para la mayoría de los sitios. El
+JSON-LD sigue siendo válido y útil para SEO/AI-SEO general (lectura por ChatGPT, Perplexity, etc.
+vía `llms.txt` y el HTML), solo no generará el carrusel de preguntas en Google Search.
+
 ## Publicación
 Sitio 100% estático → Cloudflare Pages / Netlify / GitHub Pages gratis + dominio .com.py vía NIC-PY.
 Subir el contenido de esta carpeta tal cual (index.html en la raíz).
