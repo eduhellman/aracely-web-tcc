@@ -265,6 +265,53 @@ autorizados", por lo que la herramienta ya ni siquiera lo evalúa para la mayor�
 JSON-LD sigue siendo válido y útil para SEO/AI-SEO general (lectura por ChatGPT, Perplexity, etc.
 vía `llms.txt` y el HTML), solo no generará el carrusel de preguntas en Google Search.
 
+### Diagnóstico: no aparece en Google al buscar "psicóloga/psicólogo asunción" (2026-08-19)
+
+Se investigó por qué el sitio no sale al buscar términos genéricos como "psicóloga asunción" o
+"psicólogo asunción" (ni con ubicación en el mapa, ni en resultados orgánicos), usando el navegador
+para revisar el estado real de Google Search, Google Maps y el Google Business Profile (GBP).
+
+**Hallazgo 1 — El GBP existe pero sin ninguna señal de prominencia.** El perfil "Lic. Aracely Arce
+Blaires — Psicóloga Clínica" en Google Maps tiene los datos básicos correctos (nombre, categoría
+"Psicólogo", dirección, teléfono, sitio web), pero:
+- **0 reseñas** (el perfil ofrece "Escribir una reseña" como primera acción; no hay ninguna estrella)
+- **Sin horario cargado** ("Añadir horario")
+- **Sin fotos** ("Añadir una foto")
+
+**Hallazgo 2 — No aparece en el 3-pack ni en la lista extendida de Maps.** Se revisaron los 20
+resultados del listado "Más lugares" para "psicóloga asunción" y "psicólogo asunción": Aracely no
+aparece en ninguno. Los 20 que sí aparecen tienen entre 1 y 227 reseñas (la mayoría 5,0★, algunos
+4,5-4,8★). El ranking del 3-pack de Google pesa relevancia + distancia + **prominencia** (reseñas,
+fotos, citas en directorios), y ese último factor hoy es esencialmente cero para este perfil.
+
+**Hallazgo 3 — Tampoco aparece en resultados orgánicos para el término genérico**, pero eso es
+esperable: la página 1 de "psicóloga/psicólogo asunción" está dominada por **directorios**
+(Sociedad Paraguaya de Psicología `spps.org.py`, Psicología y Mente `psicologiaymente.com`,
+`psiquiatria.com`), no por sitios propios de psicólogos individuales — ni siquiera los sitios de la
+competencia con más reseñas rankean ahí. En cambio, buscando su nombre ("Aracely Arce Blaires
+psicóloga") el sitio sí aparece primero, y `site:aracelyarceblaires.com.py` confirma que sigue
+indexado. Conclusión: no es un problema técnico de la web (eso ya está resuelto desde las Fases
+1-3), es falta de prominencia del GBP + ausencia en los directorios que sí rankean.
+
+### Plan de acción para mejorar la aparición en Google (pendiente, sin fecha límite)
+
+Orden sugerido por impacto/velocidad:
+
+1. **Conseguir reseñas en Google** (mayor impacto, más rápido) — pedir a pacientes actuales/pasados
+   que dejen reseña. Se puede generar el link directo de reseña desde el propio GBP
+   (business.google.com → "Pedir reseñas" → copiar link) y enviarlo por WhatsApp.
+2. **Completar el GBP**: cargar horario de atención (una vez definido, ver nota más arriba sobre
+   `openingHoursSpecification` en `schema.json`), subir fotos (consultorio + foto profesional de
+   Aracely — mismo pendiente que la web, punto 18 de `auditoria.md`), considerar publicaciones
+   periódicas desde el panel de GBP.
+3. **Alta en los directorios que hoy ocupan la página 1**: Psicología y Mente
+   (`psicologiaymente.com/directorio/asuncion`) y Sociedad Paraguaya de Psicología (`spps.org.py`)
+   — tienen más prioridad que los candidatos ya anotados en el punto 5 de "Pasos post-publicación"
+   (Páginas Amarillas, Colegio de Psicólogos, Doctoralia) porque literalmente son los resultados que
+   Google muestra primero para el término genérico.
+4. Seguir con el punto 5 pendiente de "Pasos post-publicación": Páginas Amarillas, Colegio de
+   Psicólogos del Paraguay (matrícula 13799) y Doctoralia, todos con el mismo NAP.
+
 ## Publicación
 Sitio 100% estático → Cloudflare Pages / Netlify / GitHub Pages gratis + dominio .com.py vía NIC-PY.
 Subir el contenido de esta carpeta tal cual (index.html en la raíz).
