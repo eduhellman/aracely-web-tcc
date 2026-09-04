@@ -41,7 +41,9 @@ Se guarda este texto en la carpeta original por si en el futuro Aracely valida f
       (instrucciones de cómo agregarlo cuando estén definidos, más abajo)
 - [ ] Áreas adicionales (autoestima, relaciones/límites u otras de la lista TCC general):
       solo agregar las que Aracely confirme que atiende
-- [ ] Fotografías reales de Aracely y del consultorio (hoy la web usa logo + ilustración botánica)
+- [x] Fotografía real de Aracely en "Sobre mí" → `assets/aracely-sobre-mi.jpg/.webp` (foto sentada),
+      reemplazando la ilustración SVG. El hero mantiene una ilustración (ver abajo, ahora un dibujo
+      de rama en vez del SVG simple). Sigue pendiente una foto real del consultorio.
 
 ## Sesión de SEO / AI-SEO / Schema / CRO (Fase 1 + Fase 2 completas)
 
@@ -311,6 +313,20 @@ Orden sugerido por impacto/velocidad:
    Google muestra primero para el término genérico.
 4. Seguir con el punto 5 pendiente de "Pasos post-publicación": Páginas Amarillas, Colegio de
    Psicólogos del Paraguay (matrícula 13799) y Doctoralia, todos con el mismo NAP.
+
+## Foto real en "Sobre mí" + nueva ilustración del hero (2026-09-03)
+
+- **"Sobre mí"**: foto real de Aracely sentada (`assets/aracely-sobre-mi.jpg` / `.webp`, con `<picture>`
+  y fallback JPG), reemplazando la ilustración SVG. Recorte mínimo (solo se le sacó una franja fina
+  arriba y abajo de la foto original), marco rectangular con esquinas suaves y sombra (mismo estilo
+  `.foto-marco` que ya se usaba, solo se ajustó el `aspect-ratio` al de la foto).
+- **Hero**: la ilustración SVG de rama botánica se reemplazó por un dibujo más detallado
+  (`assets/aracely-rama-botanica.png` / `.webp`, con transparencia real), más chica que el original,
+  desplazada levemente a la derecha y sin la animación de flotar. Sigue siendo ilustración, no foto
+  (se evaluó una foto de Aracely pero no convenció).
+- Se limpió CSS que quedó sin uso en el proceso (`.blob-fondo`, keyframes `morph`/`flotar`,
+  `.sobre-visual`).
+- Sigue pendiente una foto real del consultorio.
 
 ## Publicación
 Sitio 100% estático → Cloudflare Pages / Netlify / GitHub Pages gratis + dominio .com.py vía NIC-PY.
