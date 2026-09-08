@@ -2,8 +2,12 @@
 .gitignore
 .DS_Store
 .impeccable
+.github
 wrangler.toml
 .assetsignore
+node_modules
+package.json
+package-lock.json
 NOTAS.md
 auditoria.md
 estructura-home.md
