@@ -1,0 +1,10 @@
+.git
+.gitignore
+.DS_Store
+.impeccable
+wrangler.toml
+.assetsignore
+NOTAS.md
+auditoria.md
+estructura-home.md
+faq.md
