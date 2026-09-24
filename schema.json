@@ -23,6 +23,14 @@
         "addressLocality": "Asunción",
         "addressCountry": "PY"
       },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "09:00", "closes": "12:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "16:00", "closes": "19:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "12:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "16:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "14:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "11:00" }
+      ],
       "areaServed": [
         {
           "@type": "City",
