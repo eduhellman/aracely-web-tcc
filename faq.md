@@ -56,7 +56,7 @@ suele orientarse a objetivos concretos, y la duración se evalúa de forma trans
 proceso junto con Aracely Arce Blaires.
 
 **10. ¿Cómo se agenda una consulta con Aracely Arce Blaires?**
-La forma más directa es escribir por WhatsApp al +595 982 135 943, o por Instagram
+La forma más directa es escribir por WhatsApp al +595 982 186 389, o por Instagram
 (@psico.aracelyarce). Aracely responde personalmente para coordinar horario y modalidad
 (presencial en Asunción u online).
 
